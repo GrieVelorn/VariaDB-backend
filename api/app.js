@@ -5,6 +5,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 //import required router files
 const example = require("./example/exampleRouter");
+const arms = require("./armslist/armsRouter.js");
 
 //define app
 const app = express();
@@ -25,5 +26,8 @@ app.use("/example", example);
 app.get("/", (req, res) => {
   res.json("Hello from the app.js file!");
 });
+
+//live routes
+app.use("/arms", arms);
 
 module.exports = app;

@@ -7,14 +7,16 @@ exports.up = function (knex) {
       tbl.string("email");
     })
 
-    .createTable("users", function (table) {
-      table.string("id").notNullable().unique().primary();
-      table.string("firstname");
-      table.string("lastname");
-      table.string("email");
-      table.string("avatarUrl");
-      table.string("name");
-      table.timestamps(true, true);
+    .createTable("users", (tbl) => {
+      tbl.increments("id");
+      tbl.string("username").notNullable().unique();
+      tbl.string("password").notNullable();
+      tbl.string("firstName").notNullable();
+      tbl.string("lastName").notNullable();
+      tbl.string("email").notNullable().unique();
+      tbl.bigInteger("workPhone");
+      tbl.bigInteger("cellPhone");
+      tbl.string("title");
     });
 };
 

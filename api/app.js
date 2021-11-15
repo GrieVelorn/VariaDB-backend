@@ -5,6 +5,8 @@ const cors = require("cors");
 const helmet = require("helmet");
 //import required router files
 const example = require("./example/exampleRouter");
+const auth = require("./auth/authRouter");
+const authMiddleware = require("./auth/authMiddleware");
 
 //define app
 const app = express();
@@ -20,6 +22,7 @@ app.use(
 
 //define routes linking with imported files
 app.use("/example", example);
+app.use("/auth", auth);
 
 //test api route
 app.get("/", (req, res) => {

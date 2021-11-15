@@ -11,9 +11,9 @@ exports.up = function (knex) {
       tbl.increments("id");
       tbl.string("username").notNullable().unique();
       tbl.string("password").notNullable();
-      tbl.string("firstName").notNullable();
-      tbl.string("lastName").notNullable();
-      tbl.string("email").notNullable().unique();
+      tbl.string("firstName");
+      tbl.string("lastName");
+      tbl.string("email");
       tbl.bigInteger("workPhone");
       tbl.bigInteger("cellPhone");
       tbl.string("title");

@@ -3,7 +3,7 @@ version: "3"
 services:
   pg:
     image: postgres
-    container_name: pg-varia
+    container_name: pg-varias
     ports:
       - "5400:5432"
     environment:

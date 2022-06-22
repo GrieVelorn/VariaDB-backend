@@ -8,6 +8,8 @@ const example = require("./example/exampleRouter");
 const auth = require("./auth/authRouter");
 const authMiddleware = require("./auth/authMiddleware");
 
+const cards = require("./cards/cardsRouter");
+
 //define app
 const app = express();
 
@@ -23,11 +25,12 @@ app.use(
 //define routes linking with imported files
 app.use("/example", example);
 app.use("/auth", auth);
+app.use("/cards", cards);
 
 //test api route
-app.get("/", (req, res) => {
-  res.json("Hello from the app.js file!");
-});
+// app.get("/", (req, res) => {
+//   res.json("Hello from the app.js file!");
+// });
 
 //live routes
 

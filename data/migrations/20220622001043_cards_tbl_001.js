@@ -6,7 +6,7 @@ exports.up = function (knex) {
     tbl.string("Cost");
     tbl.string("Power");
     tbl.string("Focus");
-    tbl.string("Rules");
+    tbl.string("Rules", 3000);
     tbl.string("Attribute");
     tbl.string("Attribute_Requirement");
     tbl.string("Supertype");
@@ -16,7 +16,7 @@ exports.up = function (knex) {
     tbl.string("guid");
     tbl.string("fileloc");
     tbl.string("sortID");
-    tbl.string("product");
+    tbl.string("product", 1000);
     tbl.string("proCount");
   });
 };

@@ -28,9 +28,9 @@ app.use("/auth", auth);
 app.use("/cards", cards);
 
 //test api route
-// app.get("/", (req, res) => {
-//   res.json("Hello from the app.js file!");
-// });
+ app.get("/", (req, res) => {
+   res.json("Hello from the app.js file!");
+ });
 
 //live routes
 

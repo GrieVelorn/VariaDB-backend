@@ -9,6 +9,7 @@ const auth = require("./auth/authRouter");
 const authMiddleware = require("./auth/authMiddleware");
 
 const cards = require("./cards/cardsRouter");
+const decks = require("./deck/decksRouter");
 
 //define app
 const app = express();

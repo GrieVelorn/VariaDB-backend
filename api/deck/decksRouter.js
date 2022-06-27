@@ -21,6 +21,18 @@ router.post("/new", (req, res) => {
     });
 });
 
+router.put("/:deckGuid", (req, res) => {
+  const body = req.body;
+  const deckGuid = body.deckGuid;
+  db.findById(deckGuid).then(
+    db.update(deckGuid, body)
+      .then((e) => {
+        res.status(200).json({ example: e });
+      })
+      .catch((err) => res.status(400).json({ message: err.message }))
+  );
+});
+
 router.delete("/:id", (req, res) => {
   const { id } = req.params;
   try {

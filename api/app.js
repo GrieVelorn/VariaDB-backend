@@ -27,6 +27,7 @@ app.use(
 app.use("/example", example);
 app.use("/auth", auth);
 app.use("/cards", cards);
+app.use("/decks", decks);
 
 //test api route
  //app.get("/", (req, res) => {

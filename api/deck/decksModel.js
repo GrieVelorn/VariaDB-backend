@@ -7,8 +7,8 @@ const findAll = async () => {
 const create = (ex) => {
   return db("decks").insert(ex).returning("*");
 };
-const findById = (id) => {
-  return db("decks").where({ id }).first().select("*");
+const findById = (deckGuid) => {
+  return db("decks").where({ deckGuid }).first().select("*");
 };
 
 const remove = (id) => {

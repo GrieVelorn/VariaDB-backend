@@ -4,12 +4,13 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const helmet = require("helmet");
 //import required router files
-const example = require("./example/exampleRouter");
+
 const auth = require("./auth/authRouter");
 const authMiddleware = require("./auth/authMiddleware");
 
 const cards = require("./cards/cardsRouter");
 const decks = require("./deck/decksRouter");
+const players = require("./players/playersRouter");
 
 //define app
 const app = express();
@@ -24,13 +25,13 @@ app.use(
 );
 
 //define routes linking with imported files
-app.use("/example", example);
 app.use("/auth", auth);
 app.use("/cards", cards);
 app.use("/decks", decks);
+app.use("/players", players);
 
 //test api route
- //app.get("/", (req, res) => {
+//app.get("/", (req, res) => {
 //  res.json("Hello from the app.js file!");
 // });
 

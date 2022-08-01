@@ -7,12 +7,17 @@ const findAll = async () => {
 const create = (ex) => {
   return db("players").insert(ex).returning("*");
 };
-const findById = (playerGuid) => {
-  return db("players").where({ playerGuid }).first().select("*");
+
+const findById = (id, val) => {
+  return db("players").where(id, "=", val).first().select("*");
 };
 
-const remove = (id) => {
-  return db("players").where({ id }).del();
+const update = (id, val, ex) => {
+  return db("players").where(id, "=", val).first().update(ex).returning("*");
+};
+
+const remove = (playerGHG) => {
+  return db("players").where({ playerGHG }).del();
 };
 
 module.exports = {
@@ -20,4 +25,5 @@ module.exports = {
   create,
   remove,
   findById,
+  update,
 };

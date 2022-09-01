@@ -44,4 +44,22 @@ router.put("/:playerGHG", (req, res) => {
   );
 });
 
+router.delete("/:playerGHG", (req, res) => {
+  const { id } = req.params;
+  try {
+    db.findById("playerGHG", playerGHG).then((ex) => {
+      db.remove("playerGHG", playerGHG).then(() => {
+        res
+          .status(200)
+          .json({ message: `playerGHG ${id} deleted.`, example: ex });
+      });
+    });
+  } catch (err) {
+    res.status(500).json({
+      message: `Couldn't delete playerGHG ${id}`,
+      error: err.message,
+    });
+  }
+});
+
 module.exports = router;

@@ -16,8 +16,8 @@ const update = (id, val, ex) => {
   return db("players").where(id, "=", val).first().update(ex).returning("*");
 };
 
-const remove = (playerGHG) => {
-  return db("players").where({ playerGHG }).del();
+const remove = (id, val) => {
+  return db("players").where(id, "=", val).del();
 };
 
 module.exports = {

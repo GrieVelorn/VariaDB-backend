@@ -15,8 +15,8 @@ const remove = (id) => {
   return db("store").where({ id }).del();
 };
 
-const removeNULL = (id) => {
-  return db("store").where("storeGHG", " is null").del();
+const removeNULL = () => {
+  return db("store").where("storeGHG is null").del();
 };
 
 module.exports = {

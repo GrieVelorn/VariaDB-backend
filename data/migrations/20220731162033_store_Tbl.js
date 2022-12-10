@@ -5,6 +5,9 @@ exports.up = function (knex) {
     tbl.string("storeGUID", 100);
     tbl.string("storeName", 100);
     tbl.string("storeDesc", 100);
+    tbl.string("storeStreet1", 100);
+    tbl.string("storeStreet2", 100);
+    tbl.string("storeCSZ", 100);
     tbl.string("storeIMG", 100);
     tbl.string("lat", 100);
     tbl.string("long", 1000);

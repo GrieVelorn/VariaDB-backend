@@ -7,17 +7,12 @@ const findAll = async () => {
 const create = (ex) => {
   return db("stores").insert(ex).returning("*");
 };
-
-const findById = (id, val) => {
-  return db("stores").where(id, "=", val).first().select("*");
+const findById = (id) => {
+  return db("stores").where({ id }).first().select("*");
 };
 
-const update = (id, val, ex) => {
-  return db("stores").where(id, "=", val).first().update(ex).returning("*");
-};
-
-const remove = (id, val) => {
-  return db("stores").where(id, "=", val).del();
+const remove = (id) => {
+  return db("stores").where({ id }).del();
 };
 
 module.exports = {
@@ -25,5 +20,4 @@ module.exports = {
   create,
   remove,
   findById,
-  update,
 };

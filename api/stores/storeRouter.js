@@ -21,6 +21,13 @@ router.post("/new", (req, res) => {
     });
 });
 
+router.deleteNull("/NULLClear", (req, res) => {
+  db.removeNULL().then((e) => {
+    res.status(201).json(e);
+  });
+  //   res.status(201).json({ message: "hiii" });
+});
+
 router.delete("/:id", (req, res) => {
   const { id } = req.params;
   try {

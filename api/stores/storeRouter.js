@@ -10,15 +10,6 @@ router.get("/", (req, res) => {
   //   res.status(201).json({ message: "hiii" });
 });
 
-router.get("/:storeGHG", (req, res) => {
-  const { storeGHG } = req.params;
-  db.findById("storeGHG", storeGHG)
-    .then((e) => {
-      res.status(200).json(e);
-    })
-    .catch((err) => res.status(400).json({ message: err.message }));
-});
-
 router.post("/new", (req, res) => {
   const body = req.body;
   db.create(body)
@@ -30,36 +21,21 @@ router.post("/new", (req, res) => {
     });
 });
 
-router.put("/:storeGHG", (req, res) => {
-  const { storeGHG } = req.params;
-  const body = req.body;
-  const id = body.id;
-  db.findById("storeGHG", storeGHG).then(
-    db
-      .update("storeGHG", storeGHG, body)
-      .then((e) => {
-        res.status(200).json({ message: "example updated", example: e });
-      })
-      .catch((err) => res.status(400).json({ message: err.message }))
-  );
-});
-
-router.delete("/:storeGHG", (req, res) => {
+router.delete("/:id", (req, res) => {
   const { id } = req.params;
   try {
-    db.findById("storeGHG", storeGHG).then((ex) => {
-      db.remove("storeGHG", storeGHG).then(() => {
+    db.findById(id).then((ex) => {
+      db.remove(ex.id).then(() => {
         res
           .status(200)
-          .json({ message: `storeGHG ${id} deleted.`, example: ex });
+          .json({ message: `Record id ${id} deleted.`, record: ex });
       });
     });
   } catch (err) {
     res.status(500).json({
-      message: `Couldn't delete storeGHG ${id}`,
+      message: `Couldn't delete id ${id}`,
       error: err.message,
     });
   }
 });
-
 module.exports = router;

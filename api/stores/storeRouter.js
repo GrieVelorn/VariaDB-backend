@@ -21,7 +21,7 @@ router.post("/new", (req, res) => {
     });
 });
 
-router.deleteNull("/NULLClear", (req, res) => {
+router.delete("/NULLClear", (req, res) => {
   db.removeNULL().then((e) => {
     res.status(201).json(e);
   });

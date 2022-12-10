@@ -11,7 +11,7 @@ const authMiddleware = require("./auth/authMiddleware");
 const cards = require("./cards/cardsRouter");
 const decks = require("./deck/decksRouter");
 const players = require("./players/playersRouter");
-const stores = require("./players/storeRouter");
+const stores = require("./stores/storeRouter");
 
 //define app
 const app = express();

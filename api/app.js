@@ -28,6 +28,7 @@ app.use(
 app.use("/auth", auth);
 app.use("/cards", cards);
 app.use("/decks", decks);
+app.use("/store", store);
 app.use("/players", players);
 
 //test api route

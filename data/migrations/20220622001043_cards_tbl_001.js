@@ -18,6 +18,8 @@ exports.up = function (knex) {
     tbl.string("sortID");
     tbl.string("product", 1000);
     tbl.string("proCount");
+    tbl.string("ID");
+    tbl.string("JSN");
   });
 };
 

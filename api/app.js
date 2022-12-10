@@ -11,6 +11,7 @@ const authMiddleware = require("./auth/authMiddleware");
 const cards = require("./cards/cardsRouter");
 const decks = require("./deck/decksRouter");
 const players = require("./players/playersRouter");
+const stores = require("./players/storeRouter");
 
 //define app
 const app = express();
@@ -28,7 +29,7 @@ app.use(
 app.use("/auth", auth);
 app.use("/cards", cards);
 app.use("/decks", decks);
-app.use("/store", store);
+app.use("/stores", stores);
 app.use("/players", players);
 
 //test api route
